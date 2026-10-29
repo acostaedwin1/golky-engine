@@ -1,6 +1,7 @@
 {
   "name": "golky-engine-monorepo",
   "private": true,
+  "type": "module",
   "description": "Open-source, AI-native engine for amateur football tournaments. Built with Claude Code.",
   "license": "MIT",
   "author": "Edwin Acosta <acostaedwin1@gmail.com> (https://edwinacosta.co)",
