@@ -54,7 +54,7 @@
   },
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json && tsc -p examples/tsconfig.json",
     "test": "vitest run",
     "example": "tsup --silent && node examples/league.ts",
     "prepublishOnly": "pnpm build && publint && attw --pack"

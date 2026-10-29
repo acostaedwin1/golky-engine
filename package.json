@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Open-source, AI-native engine for amateur football tournaments. Built with Claude Code.",
   "license": "MIT",
+  "packageManager": "pnpm@12.16.1",
   "author": "Edwin Acosta <acostaedwin1@gmail.com> (https://edwinacosta.co)",
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "@arethetypeswrong/cli": "^0.18.5",
     "@biomejs/biome": "^2.6.3",
     "@changesets/cli": "^3.0.3",
+    "@types/node": "^26.6.6",
     "@vitest/coverage-v8": "^5.0.5",
     "fast-check": "^4.10.2",
     "publint": "^0.3.25",
