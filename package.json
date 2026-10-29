@@ -1,0 +1,39 @@
+{
+  "name": "golky-engine-monorepo",
+  "private": true,
+  "description": "Open-source, AI-native engine for amateur football tournaments. Built with Claude Code.",
+  "license": "MIT",
+  "author": "Edwin Acosta <acostaedwin1@gmail.com> (https://edwinacosta.co)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acostaedwin1/golky-engine.git"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "pnpm -r --filter ./packages/* run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "pnpm -r run typecheck",
+    "check": "pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm build",
+    "changeset": "changeset",
+    "release": "pnpm build && changeset publish",
+    "changeset:version": "changeset version"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@biomejs/biome": "^2.6.3",
+    "@changesets/cli": "^3.0.3",
+    "@vitest/coverage-v8": "^5.0.5",
+    "fast-check": "^4.10.2",
+    "publint": "^0.3.25",
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  }
+}

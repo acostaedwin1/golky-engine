@@ -1,0 +1,62 @@
+{
+  "name": "golky-engine",
+  "version": "0.1.0",
+  "description": "Pure, IO-free TypeScript engine for amateur football tournaments: fixtures, match lifecycle, standings, discipline. The rules behind Golky, open-sourced.",
+  "license": "MIT",
+  "author": "Edwin Acosta <acostaedwin1@gmail.com> (https://edwinacosta.co)",
+  "homepage": "https://github.com/acostaedwin1/golky-engine#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acostaedwin1/golky-engine.git",
+    "directory": "packages/engine"
+  },
+  "bugs": "https://github.com/acostaedwin1/golky-engine/issues",
+  "keywords": [
+    "tournament",
+    "football",
+    "soccer",
+    "futbol",
+    "fixture",
+    "round-robin",
+    "standings",
+    "league",
+    "sports",
+    "typescript"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "example": "tsup --silent && node examples/league.ts",
+    "prepublishOnly": "pnpm build && publint && attw --pack"
+  }
+}
