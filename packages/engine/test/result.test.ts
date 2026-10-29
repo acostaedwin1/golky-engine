@@ -59,6 +59,7 @@ describe('Result helpers', () => {
       { code: 'INVALID_RULES', reason: 'r' },
       { code: 'ROUND_ALREADY_OPEN', roundId: 'r1' },
       { code: 'NO_OPEN_ROUND' },
+      { code: 'ROUND_CLOSED', roundId: 'r1' },
       { code: 'TEAM_NOT_IN_TOURNAMENT', teamId: 't' },
       { code: 'TEAM_ALREADY_PLACED', roundId: 'r1', teamId: 't' },
       { code: 'SLOT_OUT_OF_RANGE', groupId: 'g', place: 9 },

@@ -15,6 +15,7 @@ export type EngineError =
     }
   | { readonly code: 'ROUND_ALREADY_OPEN'; readonly roundId: RoundId }
   | { readonly code: 'NO_OPEN_ROUND' }
+  | { readonly code: 'ROUND_CLOSED'; readonly roundId: RoundId }
   | {
       readonly code: 'ROUND_HAS_PENDING_MATCHES';
       readonly roundId: RoundId;
@@ -69,6 +70,8 @@ export function describeError(error: EngineError): string {
       return `${error.code}: round "${error.roundId}" is still open`;
     case 'NO_OPEN_ROUND':
       return `${error.code}: there is no open round`;
+    case 'ROUND_CLOSED':
+      return `${error.code}: round "${error.roundId}" is closed`;
     case 'ROUND_HAS_PENDING_MATCHES':
       return `${error.code}: round "${error.roundId}" has ${error.matchIds.length} unpublished match(es)`;
     case 'TEAM_NOT_IN_TOURNAMENT':
